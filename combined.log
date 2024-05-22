@@ -1,0 +1,193 @@
+2024-05-22T09:30:37.780Z [INFO]: Server is running on port 8000
+2024-05-22T09:32:15.220Z [INFO]: Server is running on port 8000
+2024-05-22T09:32:50.161Z [INFO]: Server is running on port 8000
+2024-05-22T09:32:52.525Z [ERROR]: bad auth : Authentication failed.
+2024-05-22T09:33:24.358Z [INFO]: Server is running on port 8000
+2024-05-22T09:33:26.998Z [ERROR]: bad auth : Authentication failed.
+2024-05-22T09:33:29.547Z [INFO]: Server is running on port 8000
+2024-05-22T09:33:41.321Z [INFO]: Server is running on port 8000
+2024-05-22T09:34:01.251Z [INFO]: Server is running on port 8000
+2024-05-22T09:35:56.588Z [INFO]: Server is running on port 8000
+2024-05-22T09:36:02.369Z [INFO]: Server is running on port 8000
+2024-05-22T09:36:27.808Z [INFO]: Server is running on port 8000
+2024-05-22T09:36:41.477Z [INFO]: Server is running on port 8000
+2024-05-22T09:36:55.444Z [INFO]: Server is running on port 8000
+2024-05-22T09:37:39.442Z [INFO]: Server is running on port 8000
+2024-05-22T09:37:50.063Z [INFO]: Server is running on port 8000
+2024-05-22T09:38:18.468Z [INFO]: Server is running on port 8000
+2024-05-22T09:40:21.563Z [INFO]: Server is running on port 8000
+2024-05-22T09:40:34.875Z [ERROR]: AppError is not a constructor
+2024-05-22T09:40:34.877Z [ERROR]: HTTP GET /
+2024-05-22T09:40:34.968Z [ERROR]: AppError is not a constructor
+2024-05-22T09:40:34.968Z [ERROR]: HTTP GET /favicon.ico
+2024-05-22T09:41:34.793Z [INFO]: Server is running on port 8000
+2024-05-22T09:41:37.097Z [INFO]: HTTP GET /
+2024-05-22T09:41:37.178Z [INFO]: HTTP GET /favicon.ico
+2024-05-22T09:43:19.586Z [INFO]: Server is running on port 8000
+2024-05-22T09:43:27.585Z [INFO]: HTTP GET /dashboard
+2024-05-22T09:43:27.645Z [INFO]: HTTP GET /favicon.ico
+2024-05-22T09:43:36.306Z [INFO]: HTTP GET /dashboard
+2024-05-22T09:43:36.338Z [INFO]: HTTP GET /favicon.ico
+2024-05-22T09:43:36.562Z [INFO]: HTTP GET /dashboard
+2024-05-22T09:43:36.594Z [INFO]: HTTP GET /favicon.ico
+2024-05-22T09:43:36.745Z [INFO]: HTTP GET /dashboard
+2024-05-22T09:43:36.775Z [INFO]: HTTP GET /favicon.ico
+2024-05-22T09:43:36.915Z [INFO]: HTTP GET /dashboard
+2024-05-22T09:43:36.959Z [INFO]: HTTP GET /favicon.ico
+2024-05-22T09:43:39.324Z [INFO]: HTTP GET /asdfasd
+2024-05-22T09:43:39.374Z [INFO]: HTTP GET /favicon.ico
+2024-05-22T09:44:25.429Z [INFO]: Server is running on port 8000
+2024-05-22T09:44:28.654Z [INFO]: HTTP GET /asdfasd
+2024-05-22T09:44:28.707Z [INFO]: HTTP GET /favicon.ico
+2024-05-22T09:45:06.636Z [INFO]: HTTP GET /asdfasd
+2024-05-22T09:45:06.681Z [INFO]: HTTP GET /favicon.ico
+2024-05-22T09:45:06.895Z [INFO]: HTTP GET /asdfasd
+2024-05-22T09:45:06.929Z [INFO]: HTTP GET /favicon.ico
+2024-05-22T09:45:07.061Z [INFO]: HTTP GET /asdfasd
+2024-05-22T09:45:07.095Z [INFO]: HTTP GET /favicon.ico
+2024-05-22T09:45:07.195Z [INFO]: HTTP GET /asdfasd
+2024-05-22T09:45:07.224Z [INFO]: HTTP GET /favicon.ico
+2024-05-22T09:46:36.365Z [INFO]: Server is running on port 8000
+2024-05-22T09:46:40.215Z [INFO]: Server is running on port 8000
+2024-05-22T09:46:44.729Z [INFO]: HTTP GET /asdfasd
+2024-05-22T09:46:44.768Z [INFO]: HTTP GET /favicon.ico
+2024-05-22T09:46:45.368Z [INFO]: HTTP GET /asdfasd
+2024-05-22T09:46:45.395Z [INFO]: HTTP GET /favicon.ico
+2024-05-22T09:46:45.560Z [INFO]: HTTP GET /asdfasd
+2024-05-22T09:46:45.590Z [INFO]: HTTP GET /favicon.ico
+2024-05-22T09:46:45.735Z [INFO]: HTTP GET /asdfasd
+2024-05-22T09:46:45.766Z [INFO]: HTTP GET /favicon.ico
+2024-05-22T09:46:45.903Z [INFO]: HTTP GET /asdfasd
+2024-05-22T09:46:45.947Z [INFO]: HTTP GET /favicon.ico
+2024-05-22T09:46:46.065Z [INFO]: HTTP GET /asdfasd
+2024-05-22T09:46:46.106Z [INFO]: HTTP GET /favicon.ico
+2024-05-22T09:47:08.475Z [INFO]: HTTP GET /
+2024-05-22T09:47:08.527Z [INFO]: HTTP GET /favicon.ico
+2024-05-22T09:47:13.219Z [INFO]: HTTP GET /a/d
+2024-05-22T09:47:13.292Z [INFO]: HTTP GET /favicon.ico
+2024-05-22T09:47:32.281Z [INFO]: Server is running on port 8000
+2024-05-22T09:47:37.849Z [INFO]: HTTP GET /a/d
+2024-05-22T09:47:37.909Z [INFO]: HTTP GET /favicon.ico
+2024-05-22T09:47:45.895Z [INFO]: Server is running on port 8000
+2024-05-22T09:48:33.908Z [INFO]: Server is running on port 8000
+2024-05-22T09:48:36.835Z [ERROR]: AppError is not a constructor
+2024-05-22T09:48:36.838Z [ERROR]: HTTP GET /a/d
+2024-05-22T09:48:36.887Z [ERROR]: AppError is not a constructor
+2024-05-22T09:48:36.888Z [ERROR]: HTTP GET /favicon.ico
+2024-05-22T09:49:26.608Z [ERROR]: AppError is not a constructor
+2024-05-22T09:49:26.610Z [ERROR]: HTTP GET /a/d
+2024-05-22T09:49:26.691Z [ERROR]: AppError is not a constructor
+2024-05-22T09:49:26.692Z [ERROR]: HTTP GET /favicon.ico
+2024-05-22T09:49:50.271Z [INFO]: Server is running on port 8000
+2024-05-22T09:49:55.740Z [WARN]: HTTP GET /a/d
+2024-05-22T09:49:55.782Z [WARN]: HTTP GET /favicon.ico
+2024-05-22T09:50:11.088Z [INFO]: Server is running on port 8000
+2024-05-22T09:50:11.180Z [INFO]: HTTP GET /a/d
+2024-05-22T09:50:12.024Z [INFO]: HTTP GET /a/d
+2024-05-22T09:50:12.230Z [INFO]: HTTP GET /a/d
+2024-05-22T09:50:12.389Z [INFO]: HTTP GET /a/d
+2024-05-22T09:50:23.750Z [INFO]: Server is running on port 8000
+2024-05-22T09:50:23.987Z [WARN]: HTTP GET /a/d
+2024-05-22T09:50:24.451Z [WARN]: HTTP GET /a/d
+2024-05-22T09:50:24.688Z [WARN]: HTTP GET /a/d
+2024-05-22T09:50:24.875Z [WARN]: HTTP GET /a/d
+2024-05-22T09:50:29.126Z [INFO]: HTTP GET /root
+2024-05-22T09:50:33.215Z [WARN]: HTTP GET /aa
+2024-05-22T09:50:54.854Z [INFO]: Server is running on port 8000
+2024-05-22T09:50:55.371Z [WARN]: HTTP GET /aa
+2024-05-22T09:50:55.770Z [WARN]: HTTP GET /aa
+2024-05-22T09:50:55.894Z [WARN]: HTTP GET /aa
+2024-05-22T09:50:58.492Z [INFO]: HTTP GET /api
+2024-05-22T09:51:04.450Z [INFO]: HTTP GET /api
+2024-05-22T09:52:12.376Z [INFO]: HTTP GET /api
+2024-05-22T09:52:12.600Z [INFO]: HTTP GET /api
+2024-05-22T09:52:12.817Z [INFO]: HTTP GET /api
+2024-05-22T09:52:12.996Z [INFO]: HTTP GET /api
+2024-05-22T09:52:14.279Z [WARN]: HTTP GET /
+2024-05-22T09:52:15.348Z [WARN]: HTTP GET /
+2024-05-22T09:52:26.228Z [INFO]: Server is running on port 8000
+2024-05-22T09:52:26.336Z [WARN]: HTTP GET /
+2024-05-22T09:52:26.922Z [WARN]: HTTP GET /
+2024-05-22T09:52:50.088Z [WARN]: HTTP GET /asdfasd
+2024-05-22T09:53:01.764Z [WARN]: HTTP GET /asdfasd
+2024-05-22T09:53:01.956Z [WARN]: HTTP GET /asdfasd
+2024-05-22T09:53:02.130Z [WARN]: HTTP GET /asdfasd
+2024-05-22T09:53:02.267Z [WARN]: HTTP GET /asdfasd
+2024-05-22T09:53:37.748Z [INFO]: Server is running on port 8000
+2024-05-22T09:54:10.395Z [INFO]: Server is running on port 8000
+2024-05-22T09:54:11.706Z [WARN]: HTTP GET /asdfasd
+2024-05-22T09:54:50.121Z [INFO]: Server is running on port 8000
+2024-05-22T09:54:50.250Z [WARN]: HTTP GET /asdfasd
+2024-05-22T09:54:56.182Z [INFO]: Server is running on port 8000
+2024-05-22T09:54:56.545Z [WARN]: HTTP GET /asdfasd
+2024-05-22T09:59:13.593Z [INFO]: Server is running on port 8000
+2024-05-22T09:59:24.475Z [INFO]: Server is running on port 8000
+2024-05-22T09:59:41.428Z [INFO]: Server is running on port 8000
+2024-05-22T10:03:24.973Z [INFO]: Server is running on port 8000
+2024-05-22T10:04:05.558Z [INFO]: Server is running on port 8000
+2024-05-22T10:04:18.186Z [INFO]: Server is running on port 8000
+2024-05-22T10:04:46.044Z [INFO]: Server is running on port 8000
+2024-05-22T10:05:08.654Z [INFO]: Server is running on port 8000
+2024-05-22T10:05:14.896Z [INFO]: Server is running on port 8000
+2024-05-22T10:06:44.318Z [INFO]: Server is running on port 8000
+2024-05-22T10:07:00.844Z [INFO]: Server is running on port 8000
+2024-05-22T10:10:29.215Z [INFO]: Server is running on port 8000
+2024-05-22T10:16:45.404Z [INFO]: Server is running on port 8000
+2024-05-22T10:19:19.547Z [INFO]: Server is running on port 8000
+2024-05-22T10:21:24.069Z [INFO]: Server is running on port 8000
+2024-05-22T10:22:16.681Z [WARN]: HTTP GET /asdfasd
+2024-05-22T10:22:19.250Z [WARN]: HTTP GET /
+2024-05-22T10:22:19.773Z [WARN]: HTTP GET /
+2024-05-22T10:26:03.997Z [INFO]: Server is running on port 8000
+2024-05-22T10:26:20.519Z [INFO]: Server is running on port 8000
+2024-05-22T10:26:41.217Z [INFO]: Server is running on port 8000
+2024-05-22T10:39:49.110Z [INFO]: Server is running on port 8000
+2024-05-22T10:39:50.546Z [INFO]: Server is running on port 8000
+2024-05-22T10:40:25.542Z [INFO]: Server is running on port 8000
+2024-05-22T10:40:36.461Z [WARN]: HTTP GET /api/signup
+2024-05-22T10:40:45.672Z [WARN]: HTTP GET /api/signup
+2024-05-22T10:41:05.721Z [WARN]: HTTP GET /api/users/signup
+2024-05-22T10:46:02.827Z [INFO]: Server is running on port 8000
+2024-05-22T10:46:23.134Z [WARN]: HTTP GET /api/users/signup
+2024-05-22T10:47:50.158Z [INFO]: Server is running on port 8000
+2024-05-22T10:48:27.002Z [INFO]: Server is running on port 8000
+2024-05-22T10:48:56.166Z [ERROR]: HTTP POST /api/users/signup
+2024-05-22T10:50:05.168Z [INFO]: Server is running on port 8000
+2024-05-22T10:50:11.014Z [ERROR]: HTTP POST /api/users/signup
+2024-05-22T10:50:43.587Z [INFO]: Server is running on port 8000
+2024-05-22T10:50:52.786Z [ERROR]: HTTP POST /api/users/signup
+2024-05-22T10:53:53.517Z [INFO]: Server is running on port 8000
+2024-05-22T10:53:58.245Z [ERROR]: HTTP POST /api/users/signup
+2024-05-22T10:54:06.150Z [ERROR]: HTTP POST /api/users/signup
+2024-05-22T10:55:14.291Z [INFO]: Server is running on port 8000
+2024-05-22T10:55:32.045Z [WARN]: HTTP GET /api/users/signup
+2024-05-22T10:56:46.062Z [ERROR]: HTTP POST /api/users/signup
+2024-05-22T10:57:00.440Z [ERROR]: HTTP POST /api/users/signup
+2024-05-22T10:57:40.028Z [ERROR]: HTTP POST /api/users/signup
+2024-05-22T10:57:57.485Z [INFO]: Server is running on port 8000
+2024-05-22T10:58:03.886Z [ERROR]: HTTP POST /api/users/signup
+2024-05-22T10:58:23.034Z [ERROR]: HTTP POST /api/users/signup
+2024-05-22T10:58:57.290Z [ERROR]: HTTP POST /api/users/signup
+2024-05-22T10:59:05.475Z [INFO]: Server is running on port 8000
+2024-05-22T10:59:12.001Z [ERROR]: HTTP POST /api/users/signup
+2024-05-22T10:59:24.994Z [INFO]: HTTP POST /api/users/signup
+2024-05-22T11:03:24.844Z [INFO]: Server is running on port 8000
+2024-05-22T11:03:42.007Z [ERROR]: HTTP POST /api/users/signup
+2024-05-22T11:04:10.889Z [INFO]: Server is running on port 8000
+2024-05-22T11:04:13.536Z [INFO]: Server is running on port 8000
+2024-05-22T11:04:14.536Z [INFO]: Server is running on port 8000
+2024-05-22T11:04:20.610Z [ERROR]: HTTP POST /api/users/signup
+2024-05-22T11:05:09.938Z [INFO]: Server is running on port 8000
+2024-05-22T11:05:11.513Z [INFO]: Server is running on port 8000
+2024-05-22T11:05:12.082Z [INFO]: Server is running on port 8000
+2024-05-22T11:05:18.134Z [ERROR]: HTTP POST /api/users/signup
+2024-05-22T11:05:44.874Z [INFO]: Server is running on port 8000
+2024-05-22T11:05:48.216Z [INFO]: Server is running on port 8000
+2024-05-22T11:05:54.033Z [ERROR]: HTTP POST /api/users/signup
+2024-05-22T11:07:41.590Z [INFO]: Server is running on port 8000
+2024-05-22T11:07:49.325Z [ERROR]: HTTP POST /api/users/signup
+2024-05-22T11:08:15.158Z [INFO]: Server is running on port 8000
+2024-05-22T11:11:07.841Z [INFO]: Server is running on port 8000
+2024-05-22T11:11:11.593Z [ERROR]: HTTP POST /api/users/signup
+2024-05-22T11:12:26.347Z [INFO]: HTTP POST /api/users/signup
+2024-05-22T11:13:21.489Z [INFO]: Server is running on port 8000
