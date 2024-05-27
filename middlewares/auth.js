@@ -1,5 +1,5 @@
 const { check, validationResult } = require("express-validator")
-const User = require("../model/Auth")
+const User = require("../model/User")
 
 // Validation Signup Request 
 exports.validationSignupRequest = [

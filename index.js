@@ -8,7 +8,7 @@ const connectDB = require("./config/db");
 const limiter = require("./utils/limiter");
 const logger = require("./utils/logger");
 const morganMiddleware = require("./utils/morganLogger");
-
+const Auth = require("./routes/AuthRoutes")
 dotenv.config();
 
 // Connect to MongoDB
@@ -45,8 +45,9 @@ app.get("/test", (req, res) => {
         data: [],
     });
 });
-// app.use('/api/users', userRoutes);
-// app.use('/api/admin', adminRoutes);
+
+// Routes
+app.use("/api/auth", Auth)
 
 // Handle 404 Not Found
 app.use((req, res, next) => {
@@ -62,7 +63,7 @@ app.use((err, req, res, next) => {
     });
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT =  5000;
 
 if (cluster.isMaster) {
     const numCPUs = os.cpus().length;
