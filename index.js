@@ -23,31 +23,22 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(passport.initialize());
 app.use(morganMiddleware);
-
-// Rate limiter middleware
-
-// Apply the rate limiter to all requests
-// app.use(limiter);
-
+app.use(limiter);
 // Log IP addresses middleware
-// app.use((req, res, next) => {
-//     logger.info(
-//         `IP: ${req.ip}, Time: ${new Date().toISOString()}, Method: ${
-//             req.method
-//         }, URL: ${req.originalUrl}`
-//     );
-//     next();
-// });
+app.use((req, res, next) => {
+    logger.info(
+        `IP: ${req.ip}, Time: ${new Date().toISOString()}, Method: ${
+            req.method
+        }, URL: ${req.originalUrl}`
+    );
+    next();
+});
 
 // Routes
 app.get("/test", (req, res) => {
-    let value = 0
-    for(let i = 0; i < 10_000_000; i++){
-        value++
-    }
-    
+    let value = 0;
+
     return res.status(200).json({
         status: 200,
         message: `Test API success PROCESS PID worked Done ${value} - and Core ID: ${process.pid}`,
