@@ -1,10 +1,10 @@
 const { check, validationResult } = require("express-validator")
 const User = require("../model/Auth")
 
-
+// Validation Signup Request 
 exports.validationSignupRequest = [
-    check("firstName").notEmpty().withMessage("First name is required!").trim(),
-    check("lastName").notEmpty().withMessage("Last name is required!").trim(),
+    check("fullName").notEmpty().withMessage("Full name is required!").trim(),
+    // check("lastName").notEmpty().withMessage("Last name is required!").trim(),
     check('email').trim().custom( async (value)=> {
         const user = await User.findOne({email: value})
         if(user) throw new Error("Email already use!")
@@ -15,6 +15,8 @@ exports.validationSignupRequest = [
     }),
     check("password").notEmpty().withMessage("Password is required!").isLength({min: 6}).withMessage("Password must be at least 6 chars long")
 ]
+
+// 
 exports.validationSigningRequest = [
     check('email').trim(),
     check("phone").notEmpty().withMessage("Phone number is required!").isLength({min: 11}).withMessage("Phone number must be at least 11 chars long").notEmpty(),
@@ -38,4 +40,8 @@ exports.isRequestValidated = (req,res,next) => {
             errors: filteredErrors
         })
     }
+}
+
+exports.isAuthorized = async (req, res, next) => {
+
 }

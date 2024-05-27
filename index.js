@@ -1,79 +1,88 @@
 const express = require("express");
-const app = express();
-const mongoose = require("mongoose");
-const dotenv = require("dotenv");
+const os = require("os");
 const cors = require("cors");
+const cluster = require("cluster");
 const bodyParser = require("body-parser");
-const logger = require("./helpers/logger");
-const expressWinston = require("express-winston");
-const AppError = require("./helpers/Error");
-const UserRoutes = require("./routes/user/userRoutes");
-const AdminRoutes = require("./routes/admin/adminRoutes");
-// Middleware
-app.use(express.json());
-app.use(cors());
-app.use(express.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-// Middleware to log all requests
-app.use(
-    expressWinston.logger({
-        winstonInstance: logger,
-        statusLevels: true, // Use different log levels based on response status codes
-        msg: "HTTP {{req.method}} {{req.url}}",
-        meta: false, // When true, log the metadata about the request (default to true)
-    })
-);
+const dotenv = require("dotenv");
+const connectDB = require("./config/db");
+const limiter = require("./utils/limiter");
+const logger = require("./utils/logger");
+const morganMiddleware = require("./utils/morganLogger");
 
 dotenv.config();
 
-// MongoDB connection
-mongoose
-    .connect(process.env.DATABASE_ACCESS, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    })
-    .then(() => {
-        console.log("Connected to MongoDB");
-    })
-    .catch((err) => {
-        logger.error(err.message);
-        console.log({ err });
-        throw new Error(err);
-    });
+// Connect to MongoDB
+connectDB();
+
+const app = express();
+
+// Initialize Passport
+// require('./config/passport')(passport);
+
+// Middleware
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(passport.initialize());
+app.use(morganMiddleware);
+
+// Rate limiter middleware
+
+// Apply the rate limiter to all requests
+app.use(limiter);
+
+// Log IP addresses middleware
+app.use((req, res, next) => {
+    logger.info(
+        `IP: ${req.ip}, Time: ${new Date().toISOString()}, Method: ${
+            req.method
+        }, URL: ${req.originalUrl}`
+    );
+    next();
+});
 
 // Routes
-app.use("/api/users", UserRoutes);
-app.use("/api/admin", AdminRoutes);
-// Handle all undefined routes
-app.all("*", (req, res, next) => {
-    next(new AppError(`Cannot find ${req.originalUrl} on this server!`, 404));
+app.get("/test", (req, res) => {
+    return res.status(200).json({
+        status: 200,
+        message: "Test API success",
+        data: [],
+    });
 });
-// Global error handling middleware
-app.use((error, req, res, next) => {
-    // console.log("Error-------->",error);
+// app.use('/api/users', userRoutes);
+// app.use('/api/admin', adminRoutes);
 
-    // If response headers are already sent, delegate to the default Express error handler
-    if (res.headersSent) {
-        return next(error);
-    }
+// Handle 404 Not Found
+app.use((req, res, next) => {
+    res.status(404).json({ message: "Not Found - Invalid URL" });
+});
 
-    // Log the error details for internal purposes
-    if (!error.isOperational) {
-        logger.error(error);
-    }
-
-    const statusCode = error.statusCode || 500;
-    const status = error.status || "error";
-    const message =
-        statusCode === 500 ? "Internal Server Error" : error.message;
-
-    res.status(statusCode).json({
-        status,
-        message,
+// Global Error Handler
+app.use((err, req, res, next) => {
+    logger.error(`Error: ${err.message}, Stack: ${err.stack}`);
+    res.status(500).json({
+        message: "Something went wrong",
+        error: err.message,
     });
 });
 
-// app listening
-app.listen(process.env.PORT, () => {
-    logger.info(`Server is running on port ${process.env.PORT}`);
-});
+const PORT = process.env.PORT || 5000;
+
+if (cluster.isMaster) {
+    const numCPUs = os.cpus().length;
+    console.log(`Master ${process.pid} is running`);
+
+    // Fork workers
+    for (let i = 0; i < numCPUs; i++) {
+        cluster.fork();
+    }
+
+    cluster.on("exit", (worker, code, signal) => {
+        console.log(`Worker ${worker.process.pid} died`);
+        cluster.fork();
+    });
+} else {
+    app.listen(PORT, () => {
+        console.log(`Worker ${process.pid} started on port ${PORT}`);
+    });
+}
