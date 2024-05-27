@@ -14,6 +14,10 @@ npx pm2 start index.js
 
 # Server Run Command
 ``` 
+npm start
 
-
+``` 
+    # dev
+    npm run dev
+ ```
 ```
