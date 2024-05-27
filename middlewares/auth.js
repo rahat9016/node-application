@@ -1,32 +1,24 @@
 const { check, validationResult } = require("express-validator")
 const User = require("../model/User")
-
+const jwt = require("jsonwebtoken")
 // Validation Signup Request 
 exports.validationSignupRequest = [
-    check("fullName").notEmpty().withMessage("Full name is required!").trim(),
-    // check("lastName").notEmpty().withMessage("Last name is required!").trim(),
-    check('email').trim().custom( async (value)=> {
-        const user = await User.findOne({email: value})
-        if(user) throw new Error("Email already use!")
-    }),
-    check("phone").notEmpty().withMessage("Phone number is required!").isLength({min: 11}).withMessage("Phone number must be at least 11 chars long").notEmpty().custom(async (value)=> {
-        const user = await User.findOne({phone: value});
-        if(user) throw new Error ("Phone number already exits!")
-    }),
-    check("password").notEmpty().withMessage("Password is required!").isLength({min: 6}).withMessage("Password must be at least 6 chars long")
+    check('fullName', 'Full name is required').not().isEmpty(),
+    check('email', 'Please provide a valid email').isEmail().optional(),
+    check('phone', 'Phone Number is required').isMobilePhone(),
+    check('password', 'Password must be 6 or more characters').isLength({ min: 6 })
 ]
-
-// 
+// Validation Signing Request
 exports.validationSigningRequest = [
-    check('email').trim(),
-    check("phone").notEmpty().withMessage("Phone number is required!").isLength({min: 11}).withMessage("Phone number must be at least 11 chars long").notEmpty(),
-    check("password").notEmpty().withMessage("Password is required!").isLength({min: 6}).withMessage("Password must be at least 6 chars long")
+    check('email', 'Please provide a valid email').isEmail().optional(),
+    check('phone', 'Phone Number is required').isMobilePhone(),
+    check('password', 'Password is required').exists()
 ]
+// If requested API has Errors
 exports.isRequestValidated = (req,res,next) => {
     const errors = validationResult(req);
-    // console.log(errors)
     const mappedErrors = errors.mapped()
-    // console.log(mappedErrors)
+
     if(Object.keys(mappedErrors).length === 0) {
         next()
     }else{
@@ -43,5 +35,27 @@ exports.isRequestValidated = (req,res,next) => {
 }
 
 exports.isAuthorized = async (req, res, next) => {
+    console.log(req.headers.authorization)
+    // let token;
 
+    // if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
+    //     token = req.headers.authorization.split(' ')[1];
+    // }
+
+    // if (!token) {
+    //     return res.status(401).json({ message: 'Not authorized, no token' });
+    // }
+
+    // try {
+    //     const decoded = jwt.verify(token, process.env.SECURITY_KEY);
+    //     console.log({decoded})
+    //     req.user = await User.findById(decoded.id).select('-password');
+    //     next();
+    // } catch (err) {
+    //     if (err.name === 'TokenExpiredError') {
+    //         return res.status(401).json({ message: 'Token expired' });
+    //     } else {
+    //         return res.status(401).json({ message: 'Not authorized, token failed' });
+    //     }
+    // }
 }
