@@ -9,6 +9,7 @@ const limiter = require("./utils/limiter");
 const logger = require("./utils/logger");
 const morganMiddleware = require("./utils/morganLogger");
 const Auth = require("./routes/AuthRoutes")
+const AdminRoutes = require("./routes/adminRoutes")
 dotenv.config();
 
 // Connect to MongoDB
@@ -36,19 +37,23 @@ app.use((req, res, next) => {
 });
 
 // Routes
-app.get("/test", (req, res) => {
-    let value = 0;
-
+app.get("/", (req, res) => {
     return res.status(200).json({
         status: 200,
-        message: `Test API success PROCESS PID worked Done ${value} - and Core ID: ${process.pid}`,
-        data: [],
-    });
+        message:"Everything is fine",
+        routes: {
+            Auth: {
+                Signup:"/api/auth/signup",
+                Signing:"/api/auth/signing",
+                Logout:"/api/auth/logout"
+            }
+        }
+    })
 });
 
 // Routes
 app.use("/api/auth", Auth)
-
+app.use("/api/admin", AdminRoutes)
 // Handle 404 Not Found
 app.use((req, res, next) => {
     res.status(404).json({ message: "Not Found - Invalid URL" });

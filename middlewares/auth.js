@@ -48,10 +48,33 @@ exports.isAuthorized = async (req, res, next) => {
         req.user = await User.findById(decoded.id).select('-password');
         next();
     } catch (err) {
-        if (err.name === 'JsonWebTokenError') {
+        console.log(err.name)
+        if (err.name === 'TokenExpiredError') {
             return res.status(401).json({ message: 'Your token has been expired!' });
         } else {
             return res.status(401).json({ message: 'Not authorized, token failed' });
         }
+    }
+}
+
+exports.isAdmin = async (req, res, next) => {
+    if (req.user && req.user.role !== 'admin') {
+        return res.status(403).json({
+            status: 403,
+            message: "Access Denied! You are not admin."
+        })
+    } else {
+        next()
+    }
+}
+
+exports.isUser = async (req, res, next) => {
+    if (req.user.role !== 'user') {
+        return res.status(403).json({
+            status: 403,
+            message: "Access Denied! You are not User."
+        })
+    } else {
+        next()
     }
 }
