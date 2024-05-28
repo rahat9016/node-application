@@ -65,7 +65,7 @@ exports.signing = async (req, res) => {
 }
 
 exports.logout = (req,res)=> {
-    res.status(200).json({
+    return res.status(200).json({
         status: 200,
         message: "Successfully logged out"
     })

@@ -6,5 +6,7 @@ const { validationSignupRequest, isRequestValidated, validationSigningRequest, i
 // Routes
 router.post("/signup", validationSignupRequest, isRequestValidated, signup)
 router.post("/signing", validationSigningRequest, isRequestValidated, signing)
-router.post("/logout", isAuthorized)
+router.post("/logout", isAuthorized, (req,res)=> {
+    res.send("ok")
+})
 module.exports = router
