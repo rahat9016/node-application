@@ -18,9 +18,10 @@ exports.signup = async (req, res) => {
             message: "User created successfully",
         });
     } catch (error) {
+        console.log(error)
         res.status(500).json({
             status: 500,
-            message: "Something went wrong!"
+            message: error.message
         })
     }
 }

@@ -10,7 +10,11 @@ const GroupCategorySchema = new mongoose.Schema({
     image: {
         type: String,
         trim: true
-    }
+    },
+    is_active: {
+      type: Boolean,
+      default: true  
+    },
 }, {
     timestamps: true
 });

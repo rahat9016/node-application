@@ -2,7 +2,7 @@ const Category = require("../model/Category")
 const GroupCategory = require("../model/GroupCategory")
 
 exports.createGroupCategory = async (req, res) => {
-    const { name, image } = req.body
+    const { name, image, is_active } = req.body
     if (!name) return res.status(404).json({
         status: 404,
         message: "Please provide your group category name"
@@ -10,13 +10,14 @@ exports.createGroupCategory = async (req, res) => {
     try {
         const groupCategory = new GroupCategory({
             name: name,
-            image: image
+            image: image,
+            is_active: is_active
         })
         const resp = await groupCategory.save()
         if (resp) {
             return res.status(201).json({
                 status: 201,
-                message: "Group category created successfully done."
+                message: "Group category created."
             })
         } else {
             return res.status(400).json({
@@ -28,7 +29,7 @@ exports.createGroupCategory = async (req, res) => {
         if (error.keyPattern.name === 1) {
             return res.status(400).json({
                 status: 400,
-                message: "Group category already created"
+                message: "This group category already exist."
             })
         } else {
             return res.status(400).json({
@@ -39,20 +40,26 @@ exports.createGroupCategory = async (req, res) => {
     }
 }
 exports.getGroupCategory = async (req, res) => {
-    // console.log(req.query)
     const page = parseInt(req.query.page) || 1
     const limit = parseInt(req.query.limit) || 10
     const skip = (page - 1) * limit
     const search = req.query.search || ''
     const sort = req.query.sort || '-createdAt'
+    const isActive = req.query.is_active;
 
     try {
-        const query = search ? {
-            $or: [
+        let query = {};
+
+        if (search) {
+            query.$or = [
                 { name: { $regex: search, $options: 'i' } },
                 { image: { $regex: search, $options: 'i' } }
-            ]
-        } : {}
+            ];
+        }
+
+        if (isActive !== undefined) {
+            query.is_active = isActive === 'true';
+        }
         const total = await GroupCategory.countDocuments(query)
         const groupCategories = await GroupCategory.find(query).sort(sort).skip(skip).limit(limit)
 
@@ -72,8 +79,7 @@ exports.getGroupCategory = async (req, res) => {
     } catch (error) {
         return res.status(400).json({
             status: 400,
-            message: "Something went wrong!",
-            errors: error
+            message: error,
         })
     }
 }
